@@ -25,6 +25,8 @@ def get_business_access(headers, businessId = None):
           return j[0]['access'] == True
         except KeyError:
           pass
+        except IndexError:
+          pass
     return False
 
 
