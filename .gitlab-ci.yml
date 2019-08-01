@@ -6,6 +6,8 @@ build:
   image: docker:latest
   variables:
     CI_DEBUG_TRACE: "true"
+    DOCKER_HOST: tcp://localhost:2375
+
   services:
     - docker:dind
 
