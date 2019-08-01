@@ -1,6 +1,9 @@
 stages:
   - build
   
+services:
+  - docker:18.09-dind
+
 build:
   stage: build
   variables:
