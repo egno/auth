@@ -2,6 +2,8 @@ FROM gitlab.unosalon.ml:4567/containers/flask:latest
 
 COPY . /app
 
+RUN pip install -r requirements.txt
+
 WORKDIR /app
 
 VOLUME ["/app"]
