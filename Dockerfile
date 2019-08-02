@@ -1,9 +1,6 @@
-FROM python:3.7-alpine
+FROM gitlab.unosalon.ml:4567/containers/flask:latest
 
 COPY . /app
-
-RUN apk update && \
-    pip install --no-cache-dir -r /app/requirements.txt
 
 WORKDIR /app
 
