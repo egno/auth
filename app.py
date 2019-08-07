@@ -1,10 +1,14 @@
-import os
 from requests import post, get
 from flask import Flask, request, redirect, url_for, flash, make_response
 from flask_cors import CORS
 from config import CONFIG as config
 import json
+from dotenv import load_dotenv
+import os
 
+load_dotenv()
+
+API_URL=os.getenv("CRM_API_URL")
 
 app = Flask(__name__)
 app.config['CONFIG'] = config
@@ -14,7 +18,7 @@ CORS(app)
 def get_business_access(headers, businessId = None):
     print(app.config)
     if not businessId is None and len(businessId) > 0:
-        url = app.config['CONFIG']['API']['URL'] + 'business?id=eq.'+businessId
+        url = f'{API_URL}/business?id=eq.{businessId}'
         print(url)
         try:
           res = get(url, headers={'Authorization':headers['Authorization']}, timeout=3)
