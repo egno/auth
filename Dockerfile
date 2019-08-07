@@ -2,9 +2,6 @@ FROM python:3.7-alpine
 
 COPY . /app
 
-RUN apk update && \
-    pip install --no-cache-dir -r /app/requirements.txt
-
 WORKDIR /app
 
 VOLUME ["/app"]
