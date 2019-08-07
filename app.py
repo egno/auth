@@ -8,7 +8,7 @@ import os
 
 load_dotenv()
 
-API_URL=os.getenv("CRM_API_URL")
+API_URL=os.getenv("API_URL")
 
 app = Flask(__name__)
 app.config['CONFIG'] = config
