@@ -10,12 +10,10 @@ load_dotenv()
 API_URL=os.getenv("API_URL")
 
 app = Flask(__name__)
-app.config['CONFIG'] = config
 CORS(app)
 
 
 def get_business_access(headers, businessId = None):
-    print(app.config)
     if not businessId is None and len(businessId) > 0:
         url = f'{API_URL}/business?id=eq.{businessId}'
         print(url)
