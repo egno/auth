@@ -1,7 +1,6 @@
 from requests import post, get
 from flask import Flask, request, redirect, url_for, flash, make_response
 from flask_cors import CORS
-from config import CONFIG as config
 import json
 from dotenv import load_dotenv
 import os
